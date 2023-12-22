@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://rk2ieqmfkw3b"]
+
+[ext_resource type="Texture2D" uid="uid://dups2dfufpctl" path="res://bricks.png" id="1_vd06v"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_iojvr"]
+[ext_resource type="Texture2D" uid="uid://byewo124sj5ra" path="res://player.png" id="2_rilxr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(2954, -1279)
+script = ExtResource("2_iojvr")
+
+[node name="Player" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_rilxr")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Player"]
+zoom = Vector2(0.02, 0.02)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(-3384, 756)
+polygon = PackedVector2Array(3029, -1601, 3027, -1503, 2924, -1503, 2927, -1296, 2824, -1303, 2832, -980, 3025, -982, 3025, -929, 2929, -900, 2923, -838, 2838, -821, 2787, -748, 2702, -617, 2728, -258, 2920, -278, 2714, -89, 2719, -24, 2733, 5, 3192, 2, 3158, -185, 3254, -196, 3259, -253, 3404, -276, 3466, -171, 3497, 21, 4012, 27, 3941, -145, 3865, -199, 3788, -273, 3899, -281, 3989, -414, 3952, -804, 3896, -799, 3573, -853, 3817, -915, 3916, -1014, 3978, -1190, 3904, -1267, 3746, -1360, 3885, -1391, 3856, -1541, 3695, -1541, 3582, -1626)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 38912)
+
+[node name="Bricks" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(-12309.4, 1871.5)
+scale = Vector2(9.73167, 30.4461)
+texture = ExtResource("1_vd06v")
+region_enabled = true
+region_rect = Rect2(-518.239, -1403.06, 2962.05, 4097.51)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(0, 38912)
+
+[node name="Bricks" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(23787, 2384)
+scale = Vector2(9.73167, 30.4461)
+texture = ExtResource("1_vd06v")
+region_enabled = true
+region_rect = Rect2(-518.239, -1403.06, 2962.05, 4097.51)
